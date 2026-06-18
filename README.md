@@ -147,6 +147,7 @@ book-notes-vault/
 - GitHub Pages link added above
 
 ## Notes
+This my demo video link https://youtu.be/SFeYSnq5FPg
 
 - The app uses no frameworks.
 - Seed data is stored in `seed.json` and also loaded into the app through `scripts/seed-data.js`.
