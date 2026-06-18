@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Add new records to the Book & Notes Vault catalog." />
+  <title>Book & Notes Vault | Add Record</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+</head>
+<body data-page="form">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-block">
+        <p class="brand-kicker">Book & Notes Vault</p>
+        <h1>Add books and study notes.</h1>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" data-nav-page="dashboard">Dashboard</a>
+        <a href="records.html" data-nav-page="records">Records</a>
+        <a href="form.html" data-nav-page="form" aria-current="page">Add / Edit</a>
+        <a href="settings.html" data-nav-page="settings">Settings</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="panel" aria-labelledby="form-banner-title">
+        <div class="section-heading">
+          <p class="section-label">Add / Edit</p>
+          <h2 id="form-banner-title">Create a new record with validation feedback.</h2>
+        </div>
+        <p class="hero-text">
+          This page is focused on creating new entries. Existing records can be edited inline from
+          the Records page, which keeps the workflow simple and keyboard-friendly.
+        </p>
+      </section>
+
+      <section id="form" class="panel" aria-labelledby="form-title">
+        <div class="section-heading">
+          <p class="section-label">Record form</p>
+          <h2 id="form-title">Add books or notes</h2>
+        </div>
+        <form id="recordForm" class="form-grid" novalidate>
+          <label class="field" for="recordTitle">
+            <span>Title</span>
+            <input id="recordTitle" name="title" type="text" required />
+          </label>
+          <div id="titleWarning" class="warning-message" role="status" aria-live="polite"></div>
+          <label class="field" for="recordAuthor">
+            <span>Author</span>
+            <input id="recordAuthor" name="author" type="text" required />
+          </label>
+          <label class="field" for="recordPages">
+            <span id="pagesFieldLabel">Pages</span>
+            <input id="recordPages" name="pages" type="text" inputmode="decimal" placeholder="350" required />
+          </label>
+          <label class="field" for="recordTag">
+            <span>Tag</span>
+            <input id="recordTag" name="tag" type="text" placeholder="Programming" required />
+          </label>
+          <label class="field" for="recordDate">
+            <span>Date added</span>
+            <input id="recordDate" name="dateAdded" type="date" required />
+          </label>
+          <div id="recordFormErrors" class="error-list" aria-live="polite"></div>
+          <div id="formStatus" class="message" aria-live="polite"></div>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Add record</button>
+            <button id="clearFormBtn" class="button button-secondary" type="button">Clear</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="validation-title">
+        <div class="section-heading">
+          <p class="section-label">Regex guide</p>
+          <h2 id="validation-title">Validation rules used on this page</h2>
+        </div>
+        <ul class="feature-list">
+          <li>Title: no leading or trailing spaces.</li>
+          <li>Pages: numeric values with up to two decimals.</li>
+          <li>Date: `YYYY-MM-DD` format.</li>
+          <li>Tag: letters, spaces, and hyphens only.</li>
+          <li>Advanced regex: repeated words in titles are flagged automatically.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Book & Notes Vault</p>
+      <p>Use the form here, then edit records inline from the Records page.</p>
+    </footer>
+  </div>
+
+  <script src="scripts/seed-data.js" defer></script>
+  <script src="scripts/validators.js" defer></script>
+  <script src="scripts/search.js" defer></script>
+  <script src="scripts/storage.js" defer></script>
+  <script src="scripts/state.js" defer></script>
+  <script src="scripts/stats.js" defer></script>
+  <script src="scripts/ui.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</body>
+</html>

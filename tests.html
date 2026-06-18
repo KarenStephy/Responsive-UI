@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book & Notes Vault Tests</title>
+  <style>
+    body {
+      font-family: "Trebuchet MS", "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      background: #f4efe6;
+      color: #1e1a17;
+    }
+
+    .panel {
+      max-width: 760px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(42, 35, 28, 0.12);
+      border-radius: 18px;
+      padding: 1.5rem;
+    }
+
+    ul {
+      padding-left: 1.1rem;
+    }
+
+    .pass {
+      color: #2f6d45;
+    }
+
+    .fail {
+      color: #a33c2f;
+    }
+  </style>
+</head>
+<body>
+  <main class="panel">
+    <h1>Book & Notes Vault Tests</h1>
+    <p>Open the console to inspect the assertions, or read the summary below.</p>
+    <ul id="results"></ul>
+  </main>
+
+  <script src="scripts/validators.js"></script>
+  <script src="scripts/search.js"></script>
+  <script>
+    const results = document.getElementById("results");
+    const output = [];
+
+    function assert(label, condition) {
+      console.assert(condition, label);
+      output.push({ label, condition });
+    }
+
+    assert("TITLE_REGEX accepts Book Title", BookVaultValidators.TITLE_REGEX.test("Book Title"));
+    assert("TITLE_REGEX rejects leading spaces", !BookVaultValidators.TITLE_REGEX.test(" Book"));
+    assert("PAGES_REGEX accepts 250", BookVaultValidators.PAGES_REGEX.test("250"));
+    assert("PAGES_REGEX rejects -1", !BookVaultValidators.PAGES_REGEX.test("-1"));
+    assert("PAGES_REGEX accepts 999.99", BookVaultValidators.PAGES_REGEX.test("999.99"));
+    assert("TAG_REGEX accepts Computer Science", BookVaultValidators.TAG_REGEX.test("Computer Science"));
+    assert("DUPLICATE_WORD_REGEX detects repeated words", BookVaultValidators.DUPLICATE_WORD_REGEX.test("Java Java Guide"));
+
+    const regex = BookVaultSearch.compileRegex("^Data", "i");
+    assert("compileRegex builds a usable regex", regex instanceof RegExp && regex.test("Data Structures"));
+    assert("compileRegex returns null for invalid input", BookVaultSearch.compileRegex("[") === null);
+    assert("highlight wraps matches in mark", BookVaultSearch.highlight("Data Structures", /Data/g).includes("<mark>Data</mark>"));
+
+    results.innerHTML = output
+      .map((item) => `<li class="${item.condition ? "pass" : "fail"}">${item.condition ? "PASS" : "FAIL"}: ${item.label}</li>`)
+      .join("");
+  </script>
+</body>
+</html>

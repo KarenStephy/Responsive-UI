@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Browse, search, sort, and edit the Book & Notes Vault catalog." />
+  <title>Book & Notes Vault | Records</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+</head>
+<body data-page="records">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-block">
+        <p class="brand-kicker">Book & Notes Vault</p>
+        <h1>Search, sort, and edit your catalog.</h1>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" data-nav-page="dashboard">Dashboard</a>
+        <a href="records.html" data-nav-page="records" aria-current="page">Records</a>
+        <a href="form.html" data-nav-page="form">Add / Edit</a>
+        <a href="settings.html" data-nav-page="settings">Settings</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="panel" aria-labelledby="records-banner-title">
+        <div class="section-heading">
+          <p class="section-label">Records</p>
+          <h2 id="records-banner-title">Browse the vault and edit entries inline.</h2>
+        </div>
+        <p class="hero-text">
+          Use live regex search, sorting, and filters to find records quickly. Inline edit and
+          delete actions update the catalog, dashboard stats, and timestamps automatically.
+        </p>
+      </section>
+
+      <section id="records" class="panel" aria-labelledby="records-title">
+        <div class="section-heading">
+          <p class="section-label">Catalog</p>
+          <h2 id="records-title">Search, sort, and filter the vault</h2>
+        </div>
+
+        <div class="toolbar" aria-label="Record tools">
+          <label class="field field-search" for="searchInput">
+            <span>Regex search</span>
+            <input id="searchInput" name="searchInput" type="text" placeholder="Java|^Data|\\bJS\\b" autocomplete="off" />
+          </label>
+          <label class="inline-toggle" for="caseToggle">
+            <input id="caseToggle" type="checkbox" checked />
+            <span>Case insensitive</span>
+          </label>
+          <label class="field" for="sortSelect">
+            <span>Sort by</span>
+            <select id="sortSelect" name="sortSelect">
+              <option value="date-desc">Date: newest first</option>
+              <option value="date-asc">Date: oldest first</option>
+              <option value="title-asc">Title: A to Z</option>
+              <option value="title-desc">Title: Z to A</option>
+              <option value="pages-asc">Pages: low to high</option>
+              <option value="pages-desc">Pages: high to low</option>
+            </select>
+          </label>
+          <label class="field" for="tagFilter">
+            <span>Filter by tag</span>
+            <select id="tagFilter" name="tagFilter">
+              <option value="all">All tags</option>
+            </select>
+          </label>
+        </div>
+
+        <div id="searchMessage" class="message" aria-live="polite"></div>
+        <div id="recordSummary" class="record-summary" aria-live="polite"></div>
+
+        <div class="table-shell desktop-only">
+          <table class="records-table">
+            <caption class="sr-only">Catalog records</caption>
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Author</th>
+                <th scope="col">Pages</th>
+                <th scope="col">Tag</th>
+                <th scope="col">Date</th>
+                <th scope="col">Actions</th>
+              </tr>
+            </thead>
+            <tbody id="recordsTableBody"></tbody>
+          </table>
+        </div>
+
+        <div id="mobileRecords" class="card-list mobile-only"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Book & Notes Vault</p>
+      <p>Search and inline edit from the records page.</p>
+    </footer>
+  </div>
+
+  <script src="scripts/seed-data.js" defer></script>
+  <script src="scripts/validators.js" defer></script>
+  <script src="scripts/search.js" defer></script>
+  <script src="scripts/storage.js" defer></script>
+  <script src="scripts/state.js" defer></script>
+  <script src="scripts/stats.js" defer></script>
+  <script src="scripts/ui.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</body>
+</html>

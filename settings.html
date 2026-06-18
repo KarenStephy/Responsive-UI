@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Configure reading targets, units, and import/export settings for Book & Notes Vault." />
+  <title>Book & Notes Vault | Settings</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+</head>
+<body data-page="settings">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-block">
+        <p class="brand-kicker">Book & Notes Vault</p>
+        <h1>Set your target, units, and data tools.</h1>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" data-nav-page="dashboard">Dashboard</a>
+        <a href="records.html" data-nav-page="records">Records</a>
+        <a href="form.html" data-nav-page="form">Add / Edit</a>
+        <a href="settings.html" data-nav-page="settings" aria-current="page">Settings</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="panel" aria-labelledby="settings-banner-title">
+        <div class="section-heading">
+          <p class="section-label">Settings</p>
+          <h2 id="settings-banner-title">Configure reading goals and storage tools.</h2>
+        </div>
+        <p class="hero-text">
+          Choose your display unit, set a reading target, and import or export your vault data as JSON.
+          Changes save automatically to the browser.
+        </p>
+      </section>
+
+      <section id="settings" class="panel" aria-labelledby="settings-title">
+        <div class="section-heading">
+          <p class="section-label">Preferences</p>
+          <h2 id="settings-title">Target, units, import, and export</h2>
+        </div>
+        <form id="settingsForm" class="settings-grid" novalidate>
+          <label class="field" for="readingTarget">
+            <span>Reading target</span>
+            <input id="readingTarget" name="readingTarget" type="text" inputmode="decimal" />
+          </label>
+          <label class="field" for="displayUnit">
+            <span>Display unit</span>
+            <select id="displayUnit" name="displayUnit">
+              <option value="pages">Pages</option>
+              <option value="chapters">Chapters</option>
+            </select>
+          </label>
+          <label class="field" for="chapterSize">
+            <span>Pages per chapter</span>
+            <input id="chapterSize" name="chapterSize" type="text" inputmode="decimal" placeholder="12" />
+          </label>
+          <div id="settingsStatus" class="message" aria-live="polite"></div>
+          <div id="targetMessage" class="target-message" role="status" aria-live="polite"></div>
+          <div class="form-actions">
+            <button class="button button-primary" type="submit">Save settings</button>
+            <button id="exportBtn" class="button button-secondary" type="button">Export JSON</button>
+            <label class="button button-secondary file-button">
+              Import JSON
+              <input id="importInput" type="file" accept="application/json" />
+            </label>
+            <button id="resetSeedBtn" class="button button-ghost" type="button">Reset seed</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="panel" aria-labelledby="units-title">
+        <div class="section-heading">
+          <p class="section-label">Unit conversion</p>
+          <h2 id="units-title">Page units are flexible</h2>
+        </div>
+        <ul class="feature-list">
+          <li>Pages are the default unit for Book & Notes Vault.</li>
+          <li>Switch to chapters and set how many pages equal one chapter.</li>
+          <li>The dashboard and records views will reflect the current unit setting after you save.</li>
+        </ul>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>Book & Notes Vault</p>
+      <p>Manage targets, units, and imports from the settings page.</p>
+    </footer>
+  </div>
+
+  <script src="scripts/seed-data.js" defer></script>
+  <script src="scripts/validators.js" defer></script>
+  <script src="scripts/search.js" defer></script>
+  <script src="scripts/storage.js" defer></script>
+  <script src="scripts/state.js" defer></script>
+  <script src="scripts/stats.js" defer></script>
+  <script src="scripts/ui.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</body>
+</html>

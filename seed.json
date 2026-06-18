@@ -1,0 +1,102 @@
+[
+  {
+    "id": "book_0001",
+    "title": "JavaScript Essentials",
+    "author": "John Doe",
+    "pages": 350,
+    "tag": "Programming",
+    "dateAdded": "2026-06-17",
+    "createdAt": "2026-06-17T10:00:00Z",
+    "updatedAt": "2026-06-17T10:00:00Z"
+  },
+  {
+    "id": "book_0002",
+    "title": "Data Structures",
+    "author": "Jane Smith",
+    "pages": 1200,
+    "tag": "Computer Science",
+    "dateAdded": "2026-06-16",
+    "createdAt": "2026-06-16T10:00:00Z",
+    "updatedAt": "2026-06-16T10:00:00Z"
+  },
+  {
+    "id": "book_0003",
+    "title": "AI AI Fundamentals",
+    "author": "Mark Lee",
+    "pages": 1,
+    "tag": "Artificial Intelligence",
+    "dateAdded": "2026-06-16",
+    "createdAt": "2026-06-16T11:30:00Z",
+    "updatedAt": "2026-06-16T11:30:00Z"
+  },
+  {
+    "id": "book_0004",
+    "title": "Research Methods for Students",
+    "author": "Priya Patel",
+    "pages": 220,
+    "tag": "Research Notes",
+    "dateAdded": "2026-06-15",
+    "createdAt": "2026-06-15T10:00:00Z",
+    "updatedAt": "2026-06-15T10:00:00Z"
+  },
+  {
+    "id": "book_0005",
+    "title": "Modern Literature Survey",
+    "author": "Elena Ruiz",
+    "pages": 480,
+    "tag": "Literature",
+    "dateAdded": "2026-06-14",
+    "createdAt": "2026-06-14T10:00:00Z",
+    "updatedAt": "2026-06-14T10:00:00Z"
+  },
+  {
+    "id": "book_0006",
+    "title": "Calculus Quick Notes",
+    "author": "Omar Hassan",
+    "pages": 64,
+    "tag": "Mathematics",
+    "dateAdded": "2026-06-13",
+    "createdAt": "2026-06-13T10:00:00Z",
+    "updatedAt": "2026-06-13T10:00:00Z"
+  },
+  {
+    "id": "book_0007",
+    "title": "History of Computing",
+    "author": "Amina Yusuf",
+    "pages": 540,
+    "tag": "History",
+    "dateAdded": "2026-06-12",
+    "createdAt": "2026-06-12T10:00:00Z",
+    "updatedAt": "2026-06-12T10:00:00Z"
+  },
+  {
+    "id": "book_0008",
+    "title": "UX Design Patterns",
+    "author": "Chris Taylor",
+    "pages": 128,
+    "tag": "Design Systems",
+    "dateAdded": "2026-06-11",
+    "createdAt": "2026-06-11T10:00:00Z",
+    "updatedAt": "2026-06-11T10:00:00Z"
+  },
+  {
+    "id": "book_0009",
+    "title": "Machine Learning Digest",
+    "author": "Nora Kim",
+    "pages": 780,
+    "tag": "Data Science",
+    "dateAdded": "2025-01-01",
+    "createdAt": "2025-01-01T10:00:00Z",
+    "updatedAt": "2025-01-01T10:00:00Z"
+  },
+  {
+    "id": "book_0010",
+    "title": "TypeScript Patterns Lab",
+    "author": "Leo Martins",
+    "pages": 96,
+    "tag": "Programming",
+    "dateAdded": "2024-02-29",
+    "createdAt": "2024-02-29T10:00:00Z",
+    "updatedAt": "2024-02-29T10:00:00Z"
+  }
+]

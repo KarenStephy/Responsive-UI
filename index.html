@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Book & Notes Vault - a responsive, accessible catalog for books, lecture notes, and study resources." />
+  <title>Book & Notes Vault | Dashboard</title>
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="styles/layout.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+</head>
+<body data-page="dashboard">
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <div class="page-shell">
+    <header class="site-header">
+      <div class="brand-block">
+        <h1>Catalog, search, and track your study library.</h1>
+      </div>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="index.html" data-nav-page="dashboard" aria-current="page">Dashboard</a>
+        <a href="records.html" data-nav-page="records">Records</a>
+        <a href="form.html" data-nav-page="form">Add / Edit</a>
+        <a href="settings.html" data-nav-page="settings">Settings</a>
+        <a href="#about">About</a>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <section class="hero panel" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="hero-text">
+            Keep your study resources organized with live regex search, inline editing,
+            dashboard stats, import/export, and accessible keyboard-friendly controls.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="records.html">Browse records</a>
+            <a class="button button-secondary" href="form.html">Add a record</a>
+          </div>
+        </div>
+        <aside class="hero-summary" aria-label="Current summary">
+          <div class="summary-chip">
+            <span>Records</span>
+            <strong id="heroBookCount">0</strong>
+          </div>
+          <div class="summary-chip">
+            <span>Total pages</span>
+            <strong id="heroPages">0</strong>
+          </div>
+          <div class="summary-chip">
+            <span>Top tag</span>
+            <strong id="heroTopTag">-</strong>
+          </div>
+        </aside>
+      </section>
+
+      <section id="dashboard" class="panel" aria-labelledby="dashboard-title">
+        <div class="section-heading">
+          <p class="section-label">Dashboard</p>
+          <h2 id="dashboard-title">Stats and reading progress</h2>
+        </div>
+        <div id="statsGrid" class="stats-grid" aria-live="polite"></div>
+        <div id="targetMessage" class="target-message" role="status" aria-live="polite"></div>
+        <div class="chart-card">
+          <div class="chart-header">
+            <h3>Last 7 days additions</h3>
+            <p>Bars reflect records added per day.</p>
+          </div>
+          <div id="chart" class="chart" role="img" aria-label="Last 7 days additions chart"></div>
+        </div>
+      </section>
+
+      <section id="about" class="panel" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="section-label">About</p>
+          <h2 id="about-title">Project description and contact</h2>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p>
+              Book & Notes Vault helps students catalog books, lecture notes, research materials,
+              and study resources in one accessible place.
+            </p>
+            <ul class="feature-list">
+              <li>Semantic layout with responsive cards on mobile and a table on desktop.</li>
+              <li>Regex validation and regex search with safe compilation and highlighting.</li>
+              <li>Dashboard statistics, reading targets, local persistence, and JSON import/export.</li>
+            </ul>
+          </div>
+          <div class="contact-card">
+            <h3>Contact</h3>
+            <p><strong>GitHub:</strong> <a href="https://github.com/KarenStephy" target="_blank" rel="noreferrer noopener">github.com/KarenStephy</a></p>
+            <p><strong>Email:</strong> <a href="mailto:k.musangwa@alustudent.com">k.musangwa@alustudent.com</a></p>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>Book & Notes Vault</p>
+      <p>Open source-friendly vanilla web app for cataloging study resources.</p>
+    </footer>
+  </div>
+
+  <script src="scripts/seed-data.js" defer></script>
+  <script src="scripts/validators.js" defer></script>
+  <script src="scripts/search.js" defer></script>
+  <script src="scripts/storage.js" defer></script>
+  <script src="scripts/state.js" defer></script>
+  <script src="scripts/stats.js" defer></script>
+  <script src="scripts/ui.js" defer></script>
+  <script src="scripts/app.js" defer></script>
+</body>
+</html>
